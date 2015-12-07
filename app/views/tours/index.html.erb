@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tours</h1>
+
+<ul>
+  <% @tours.each do |tour| %>
+    <li><%= link_to tour.title, tour %></li>
+  <% end %>
+</ul>
+<br>
+
+<%= link_to 'New Tour', new_tour_path %>
