@@ -3,10 +3,27 @@
 <h1>Listing Tours</h1>
 
 <ul>
-  <% @tours.each do |tour| %>
-    <li><%= link_to tour.title, tour %></li>
+  <% Category.all.each do |category| %>
+      <li><%= link_to category.name, category_tours_path(category) %></li>
   <% end %>
 </ul>
+
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @tours.each do |tour| %>
+      <tr>
+        <td><%= link_to tour.title %></td>
+        <td><%= link_to 'Show', tour %></td>
+        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
 <br>
 
 <%= link_to 'New Tour', new_tour_path %>
