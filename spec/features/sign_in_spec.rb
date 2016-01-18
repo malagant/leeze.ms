@@ -16,7 +16,7 @@ RSpec.feature 'Sign in',
     end
 
     scenario 'sign out' do
-      click_link 'Sign out'
+      click_link user.email
 
       expect(page).to_not have_content "Welcome, #{user.email}"
       expect(page).to have_content 'Sign in'
