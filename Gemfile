@@ -30,6 +30,7 @@ gem 'less-rails'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'rolify'
+gem 'activeadmin', github: 'activeadmin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
