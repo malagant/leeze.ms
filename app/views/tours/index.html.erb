@@ -24,4 +24,6 @@
 </table>
 <br>
 
-<%= link_to 'New Tour', new_tour_path %>
+<% if can?(:create, Tour) %>
+    <%= link_to 'New Tour', new_tour_path %>
+<% end %>
